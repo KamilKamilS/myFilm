@@ -3,6 +3,7 @@ package com.myfilm.service;
 import com.myfilm.model.Movie;
 import com.myfilm.repository.MovieRepository;
 import com.myfilm.service.exception.MovieAlreadyExistsInCatalogueException;
+import com.myfilm.service.exception.MovieNotFoundInCatalogueException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,11 @@ public class MovieService {
 
     public List<Movie> readAllMoviesFromCatalogue() {
         return movieRepository.findAll();
+    }
+    
+    public Movie getMovieByTitle(String title) throws MovieNotFoundInCatalogueException {
+        return movieRepository.findMovieByTitle(title)
+                .orElseThrow(() -> new MovieNotFoundInCatalogueException(title));
+        
     }
 }
