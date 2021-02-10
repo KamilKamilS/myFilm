@@ -30,8 +30,6 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
-    private PriceIndex priceIndex;
-
     private LocalDate releaseDate;
 
     @OneToMany(mappedBy = "movie",

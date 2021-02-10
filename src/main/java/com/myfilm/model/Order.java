@@ -27,8 +27,6 @@ public class Order {
 
     private LocalDate orderedDate;
     private LocalDate returnDate;
-    private DelivertType delivertType;
-    private PaymentType paymentType;
 
     @OneToMany(mappedBy = "order")
     private List<Copy> copies;
