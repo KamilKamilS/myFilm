@@ -18,7 +18,7 @@ public class Rate {
 
     @ManyToOne
     @JoinColumn(name = "movieID")
-    private com.sda.filmbook.model.Movie movie;
+    private Movie movie;
     private int rate;
     private String description;
 
