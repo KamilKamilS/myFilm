@@ -24,7 +24,6 @@ public class RateService {
         if (movieInCatalogue.isEmpty()) {
             throw new MovieNotFoundInCatalogueException(" ");
         } else {
-//            Movie movieFromCatalogue = movieInCatalogue.get();
             List<Rate> rateList = movieInCatalogue.get().getRates();
             rateList.add(rate);
             movieInCatalogue.get().setRates(rateList);
