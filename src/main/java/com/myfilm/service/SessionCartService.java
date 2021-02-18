@@ -53,7 +53,7 @@ public class SessionCartService implements CartService {
     }
 
     private int getQuantities(Movie movie) {
-        return getMovies().get(movie) == null ? 1 : getMovies().get(movie) + 1;
+        return movies.get(movie) == null ? 1 : movies.get(movie) + 1;
     }
 
 }
